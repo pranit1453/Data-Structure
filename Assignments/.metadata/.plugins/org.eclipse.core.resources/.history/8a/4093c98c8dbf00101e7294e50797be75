@@ -1,0 +1,19 @@
+package com.demo.array;
+
+public class SingleDArray {
+
+	public int additonOfElements(int[] arr) {
+
+		int sum = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
+
+	public int additonOfElements(int[] arr, int target) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

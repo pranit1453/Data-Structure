@@ -1,0 +1,10 @@
+package com.demo.services;
+
+public class ArrayServices {
+
+	public int[] sumOfArray(int[] arr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.array.Array;
+
+public class SingleDArray {
+
+	public static void main(String[] args) {
+		
+		try(Scanner sc = new Scanner(System.in)){
+			
+			Operations op =null;
+			do {
+				for(Operations o: Operations.values()) {
+					System.out.println(o.ordinal()+"."+o);
+				}
+			}
+		}
+		
+
+	}
+
+}

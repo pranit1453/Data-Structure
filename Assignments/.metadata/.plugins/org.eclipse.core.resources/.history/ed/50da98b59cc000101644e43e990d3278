@@ -1,0 +1,129 @@
+package com.demo.array;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class SingleDArray {
+
+	public int additonOfElements(int[] arr) {
+
+		int sum = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
+
+	public int additonOfElements(int[] arr, int target) {
+		int sum = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; i < arr.length; i++) {
+				if ((arr[i] + arr[j]) == target) {
+					return sum;
+				}
+			}
+		}
+		return -1;
+	}
+
+	public int[] factPrime(int[] arr1) {
+		List<Integer> list = new ArrayList<>();
+		for (int num : arr1) {
+			if (isPrime(num)) {
+				list.add(fact(num));
+			}
+
+		}
+		return list.stream().mapToInt(Integer::intValue).toArray();
+	}
+
+	private boolean isPrime(int num) {
+		if (num <= 1) {
+			return false;
+		}
+		for (int i = 2; i <= Math.sqrt(num); i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private int fact(int ele) {
+		int fact = 1;
+		for (int i = 1; i <= ele; i++) {
+			fact *= i;
+		}
+		return fact;
+	}
+
+	public int maxPrime(int[] arr2) {
+
+		List<Integer> list = new ArrayList<>();
+		for (int num : arr2) {
+			if (isPrime(num)) {
+				list.add(num);
+			}
+		}
+		int[] prime = list.stream().mapToInt(Integer::intValue).toArray();
+
+		// Arrays.stream(arr2).filter(this::isPrime).max().orElseThrow(()->new
+		// IllegalArgumentException("No Prime Number"));
+		int maxi = prime[0];
+		for (int i = 1; i < prime.length; i++) {
+			if (prime[i] > maxi) {
+				maxi = prime[i];
+			}
+		}
+		return maxi;
+	}
+
+	public int[] reverseNumber(int[] arr3) {
+		int[] temp = new int[arr3.length];
+		for (int i = 0; i < arr3.length; i++) {
+			int value = arr3[i];
+			if (isPrime(value) && arr3[i] < 3) {
+				temp[i] = reverse(arr3[i]);
+			} else {
+				temp[i] = value;
+			}
+		}
+		return temp;
+	}
+
+	private static int reverse(int n) {
+		int revNum = 0;
+		while (n > 0) {
+			revNum = revNum * 10 + n % 10;
+			n = n / 10;
+		}
+		return revNum;
+
+	}
+
+	public String[] sortString(String[] str) {
+		if (str == null || str.length == 0) {
+			return null;
+		}
+		for (int i = 0; i < str.length; i++) {
+			for (int j = i + 1; j < str.length; j++) {
+				if (str[i] == null || str[j] == null) {
+					continue;
+				}
+				if (str[i].length() > 1 && str[j].length() > 1) {
+					char ci = str[i].charAt(1);
+					char cj = str[j].charAt(j);
+
+					if (ci > cj) {
+						String temp = str[i];
+						str[i] = str[j];
+						str[j] = temp;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+}

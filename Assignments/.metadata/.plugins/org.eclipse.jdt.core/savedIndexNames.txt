@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\IET\Desktop\250845920054\Data Structure\Assignments\.metadata\.plugins\org.eclipse.jdt.core
+174883698.index
+1262351709.index
+1865797976.index
+449766527.index

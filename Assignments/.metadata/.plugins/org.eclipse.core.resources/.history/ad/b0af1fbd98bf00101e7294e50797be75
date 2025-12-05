@@ -1,0 +1,8 @@
+package com.demo.test;
+
+public enum Operations {
+	addition, fact_prime, fact,
+//	max_prime, min_prime, even, odd, reversearr, 
+//	copy_newarr, arrWithString, 
+	Exit,
+}

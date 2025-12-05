@@ -1,0 +1,35 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.array.Array;
+
+public class SingleDArray {
+
+	public static void main(String[] args) {
+
+		try (Scanner sc = new Scanner(System.in)) {
+
+			Operations op = null;
+			do {
+				System.out.println("---Select Operations---");
+				for (Operations o : Operations.values()) {
+					System.out.println(o.ordinal() + "." + o);
+				}
+				System.out.print("Enter Choice : ");
+				String input = sc.nextLine();
+				try {
+					int choice = Integer.parseInt(input);
+					if(choice<0 || choice>=Operations.values().length) {
+						System.out.println("Invalid choice!!!!");
+						continue;
+					}
+				}catch() {
+					
+				}
+			} while (op != Operations.Exit);
+		}
+
+	}
+
+}

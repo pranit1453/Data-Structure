@@ -1,0 +1,7 @@
+package com.demo.array;
+
+public enum Operations {
+	accept, addition, fact_prime, fact,
+	max_prime, min_prime, even, odd, reversearr, 
+	copy_newarr, arrWithString, Exit,
+}

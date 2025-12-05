@@ -1,0 +1,77 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.array.SingleDArray;
+
+public class SingleDArrayTest {
+
+	public static void main(String[] args) {
+
+		try (Scanner sc = new Scanner(System.in)) {
+			SingleDArray sa = new SingleDArray();
+			Operations op = null;
+			do {
+				System.out.println("---Select Operations---");
+				for (Operations o : Operations.values()) {
+					System.out.println(o.ordinal() + "." + o);
+				}
+				System.out.print("Enter Choice : ");
+				String input = sc.nextLine();
+				try {
+					int choice = Integer.parseInt(input);
+					if (choice < 0 || choice >= Operations.values().length) {
+						System.out.println("Invalid choice!!!!");
+						continue;
+					}
+					op = Operations.values()[choice];
+					switch (op) {
+					case addition:
+						int[] arr = { 24, 45, 85, 26, 24, 46, 9, 2, 5, 1 };
+						int sum1 = sa.additonOfElements(arr);
+						System.out.print("Enter Target : ");
+						int target = sc.nextInt();
+						int sum2 = sa.additonOfElements(arr, target);
+						System.out.println("Addition Of Elements are : " + sum1);
+						if (sum2 != -1) {
+							System.out.println("Case Resolve");
+						} else {
+							System.out.println("Incorrect Logic");
+						}
+						break;
+
+					case fact_prime:
+						int[] arr1 = { 1, 2, 5, 3, 4, 6 };
+
+						int[] fact = sa.factPrime(arr1);
+						if (fact != null) {
+							for (int f : fact) {
+								System.out.print(f + ",");
+							}
+						} else {
+							System.out.println("Incorrect Logic");
+						}
+						break;
+					case max_prime:
+						int[] arr2 = { 1, 2, 5, 67, 3, 4, 29, 43 };
+
+						int max = sa.maxPrime(arr2);
+						if (max != -1) {
+							System.out.println("Max : " + max);
+						} else {
+							System.out.println("Incorrect Logic");
+						}
+						break;
+					case Exit:
+						return;
+
+					}
+				} catch (NumberFormatException e) {
+					System.out.println("Error : " + e.getMessage());
+				}
+			} while (op != Operations.Exit);
+		}
+
+	}
+
+}

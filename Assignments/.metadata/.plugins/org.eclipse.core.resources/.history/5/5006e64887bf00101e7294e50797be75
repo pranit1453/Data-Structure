@@ -1,0 +1,14 @@
+package com.demo.array;
+
+public class Array {
+	private int[] arr;
+	private int size;
+
+	public Array() {
+		super();
+		this.arr=new int[10];
+	}
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.demo.array;
+
+public class SingleDArray {
+
+	public int additonOfElements(int[] arr) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

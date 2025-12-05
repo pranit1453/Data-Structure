@@ -1,0 +1,19 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.array.Array;
+
+public class SingleDArray {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter Capacity : ");
+		Array arr = new Array();
+		
+
+	}
+
+}
